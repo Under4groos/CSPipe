@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPipe", "CSPipe\CSPipe.csproj", "{3957A31E-9EEA-4CE3-B7B8-D2779B5F1DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8377C69C-8623-46A1-B620-41220E0246F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{DEE15C0F-6CA8-434C-9458-6C9E6144F685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeServer", "PipeServer\PipeServer.csproj", "{B1F1E3E2-2191-4717-966B-003A574E94C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeClient", "PipeClient\PipeClient.csproj", "{E61EF66A-AF22-407D-9240-41DE3016783E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3957A31E-9EEA-4CE3-B7B8-D2779B5F1DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3957A31E-9EEA-4CE3-B7B8-D2779B5F1DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3957A31E-9EEA-4CE3-B7B8-D2779B5F1DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3957A31E-9EEA-4CE3-B7B8-D2779B5F1DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F1E3E2-2191-4717-966B-003A574E94C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F1E3E2-2191-4717-966B-003A574E94C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F1E3E2-2191-4717-966B-003A574E94C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F1E3E2-2191-4717-966B-003A574E94C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61EF66A-AF22-407D-9240-41DE3016783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61EF66A-AF22-407D-9240-41DE3016783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61EF66A-AF22-407D-9240-41DE3016783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61EF66A-AF22-407D-9240-41DE3016783E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DEE15C0F-6CA8-434C-9458-6C9E6144F685} = {8377C69C-8623-46A1-B620-41220E0246F1}
+		{B1F1E3E2-2191-4717-966B-003A574E94C7} = {DEE15C0F-6CA8-434C-9458-6C9E6144F685}
+		{E61EF66A-AF22-407D-9240-41DE3016783E} = {DEE15C0F-6CA8-434C-9458-6C9E6144F685}
+	EndGlobalSection
+EndGlobal
