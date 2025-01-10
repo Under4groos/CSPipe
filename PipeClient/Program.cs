@@ -20,7 +20,7 @@ using (PipeClient client = new PipeClient()
     {
         if (client.Connected)
         {
-            client.SendData(Console.ReadLine());
+            client.SendMessage(Console.ReadLine());
             continue;
         }
         Task.Delay(1000).Wait();

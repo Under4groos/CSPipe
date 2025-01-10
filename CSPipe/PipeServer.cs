@@ -105,22 +105,13 @@ namespace CSPipe
         {
             lock (this.clients)
             {
-                ASCIIEncoding encoder = new ASCIIEncoding();
+                UTF8Encoding encoder = new UTF8Encoding();
                 byte[] messageBuffer = encoder.GetBytes(message);   
                 client.stream.Write(messageBuffer, 0, messageBuffer.Length);
                 client.stream.Flush();
             }
 
-            //lock (this.clients)
-            //{
-            //    ASCIIEncoding encoder = new ASCIIEncoding();
-            //    byte[] messageBuffer = encoder.GetBytes(message);
-            //    foreach (svPipeClient client in this.clients)
-            //    {
-            //        client.stream.Write(messageBuffer, 0, messageBuffer.Length);
-            //        client.stream.Flush();
-            //    }
-            //}
+          
         }
 
 

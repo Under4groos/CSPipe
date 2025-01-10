@@ -69,7 +69,7 @@ namespace CSPipe
                 }
                 catch
                 {
-                    break;
+                    continue;
                 }
                 if (bytesRead == 0)
                     continue;
@@ -79,7 +79,7 @@ namespace CSPipe
             this.stream.Close();
             this.handle.Close();
         }
-        public void SendData(string message)
+        public void SendMessage(string message)
         {
             ASCIIEncoding encoder = new ASCIIEncoding();
             byte[] messageBuffer = encoder.GetBytes(message);
