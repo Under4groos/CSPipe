@@ -101,19 +101,30 @@ namespace CSPipe
         }
 
 
-        public void SendData(string message)
+        public void SendData(svPipeClient client , string message)
         {
             lock (this.clients)
             {
                 ASCIIEncoding encoder = new ASCIIEncoding();
-                byte[] messageBuffer = encoder.GetBytes(message);
-                foreach (svPipeClient client in this.clients)
-                {
-                    client.stream.Write(messageBuffer, 0, messageBuffer.Length);
-                    client.stream.Flush();
-                }
+                byte[] messageBuffer = encoder.GetBytes(message);   
+                client.stream.Write(messageBuffer, 0, messageBuffer.Length);
+                client.stream.Flush();
             }
+
+            //lock (this.clients)
+            //{
+            //    ASCIIEncoding encoder = new ASCIIEncoding();
+            //    byte[] messageBuffer = encoder.GetBytes(message);
+            //    foreach (svPipeClient client in this.clients)
+            //    {
+            //        client.stream.Write(messageBuffer, 0, messageBuffer.Length);
+            //        client.stream.Flush();
+            //    }
+            //}
         }
+
+
+
         public void Dispose()
         {
             this.listenTask.Dispose();

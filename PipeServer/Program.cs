@@ -8,6 +8,7 @@ using (PipeServer server = new PipeServer()
     server.MessageReceived += (sender, e) =>
     {
         Console.WriteLine($"[{sender.handle.DangerousGetHandle()}]: {e}");
+        server.SendData(sender ,"ok");
     };
     server.Start();
 
