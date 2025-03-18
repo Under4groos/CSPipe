@@ -1,10 +1,6 @@
-﻿using Microsoft.Win32.SafeHandles;
-using CSPipe.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CSPipe.Helper;
+using Microsoft.Win32.SafeHandles;
 using System.Text;
-using System.Threading.Tasks;
 using static CSPipe.Helper.Delegates;
 
 namespace CSPipe
@@ -85,7 +81,16 @@ namespace CSPipe
             byte[] messageBuffer = encoder.GetBytes(message);
 
             this.stream.Write(messageBuffer, 0, messageBuffer.Length);
-            this.stream.Flush();
+
+            try
+            {
+                this.stream.Flush();
+            }
+            catch (Exception)
+            {
+
+                this.connected = false;
+            }
         }
 
         public void Dispose()

@@ -12,17 +12,25 @@ using (PipeClient client = new PipeClient()
 {
     client.MessageReceived += (string msg) =>
     {
+        msg = msg.Trim().Replace("\0" , "");
+        if (msg == "dbg" || msg == "ret" || msg == "-")
+            return;
         Console.WriteLine($"[SV->CL]: {msg}");
     };
     client.Connect();
-
+    Thread.Sleep(1000);
     while (true)
     {
         if (client.Connected)
         {
-            client.SendMessage(Console.ReadLine());
+            client.SendMessage("dbg");
+            Thread.Sleep(100);
             continue;
         }
-        Task.Delay(1000).Wait();
+        else
+        {
+            client.Connect();
+        }
+         
     }
 }
