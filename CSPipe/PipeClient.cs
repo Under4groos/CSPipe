@@ -40,7 +40,7 @@ namespace CSPipe
                   FILE_FLAG_OVERLAPPED,
                   IntPtr.Zero);
 
-            //could not create handle - server probably not running
+           
             if (this.handle.IsInvalid)
                 return;
 
@@ -52,6 +52,11 @@ namespace CSPipe
         }
         public void Read()
         {
+            if (this.handle.IsClosed)
+            {
+                return;
+            }
+                
             this.stream = new FileStream(this.handle, FileAccess.ReadWrite, BUFFER_SIZE, true);
             byte[] readBuffer = new byte[BUFFER_SIZE];
             ASCIIEncoding encoder = new ASCIIEncoding();
